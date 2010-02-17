@@ -16,4 +16,3 @@
   (doseq [[n factors] test-set]
     (is (= factors (factors-of n)))))
 
-(run-tests)
