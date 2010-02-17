@@ -10,8 +10,7 @@
     (6 [2 3])
     (7 [7])
     (8 [2 2 2])
-    (9 [3 3])
-    ])
+    (9 [3 3])])
 
 (deftest check-set
   (doseq [[n factors] test-set]
