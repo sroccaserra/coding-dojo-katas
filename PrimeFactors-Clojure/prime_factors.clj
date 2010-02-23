@@ -1,9 +1,10 @@
-(ns prime-factors)
+(ns prime_factors)
 
-(defn factorization [n]
+(defn factorize [n]
   (loop [number n
          divisor 2
          factors []]
-     (cond (> divisor number) factors
-           (= 0 (mod number divisor)) (recur (/ number divisor) divisor (conj factors divisor))
-           true (recur number (inc divisor) factors))))
+    (cond (= 1 number) factors
+          (= 0 (mod number divisor)) (recur (/ number divisor) divisor (conj factors divisor))
+          (< divisor (Math/sqrt number)) (recur number (inc divisor) factors)
+          true                       (conj factors number))))
