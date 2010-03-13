@@ -1,9 +1,9 @@
 -module(test_ut).
 -compile(export_all).
 -import(prime_factors, [factors/1]).
--import(lists, [map/2, foldl/3]).
+-import(lists, [foldl/3]).
 
-one_has_no_factors_test() ->
+test() ->
     [] = foldl(fun({Expected, Number}, Acc) ->
                        case factors(Number) of
                            Expected ->
