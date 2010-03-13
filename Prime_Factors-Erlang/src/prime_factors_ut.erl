@@ -1,4 +1,4 @@
--module(test_ut).
+-module(prime_factors_ut).
 -compile(export_all).
 -import(prime_factors, [factors/1]).
 -import(lists, [foldl/3]).
@@ -22,5 +22,6 @@ test() ->
                 {[2, 3],    6},
                 {[7],       7},
                 {[2, 2, 2], 8},
-                {[3, 3],    9}
+                {[3, 3],    9},
+                {[1789],    1789}
                ]).
