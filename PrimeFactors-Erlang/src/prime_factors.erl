@@ -9,8 +9,10 @@ factors(1, _, Factors) -> Factors;
 factors(N, Divisor, Factors) when N rem Divisor == 0 ->
     factors(N div Divisor, Divisor, [Divisor|Factors]);
 factors(N, Divisor, Factors) ->
-    Sqrt = sqrt(N),
-    if
-        Divisor > Sqrt -> [N|Factors];
-        true -> factors(N, Divisor + 1, Factors)
+    case Divisor > sqrt(N) of
+        true ->
+            [N|Factors];
+        false ->
+            factors(N, Divisor + 1, Factors)
     end.
+
