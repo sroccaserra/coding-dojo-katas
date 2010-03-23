@@ -6,7 +6,7 @@
     (mapcat identity m)))
 
 (defmacro cp [& arrays]
-  "Just wraps a call to Clojure for."
+  "Just wraps a call to Clojure's for macro."
   (let [nb-arrays (count arrays)
         names (for [_ (range nb-arrays)]
                 (gensym "name"))]
