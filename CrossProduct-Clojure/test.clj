@@ -9,7 +9,7 @@
   (is (= [:a 1 :b 2]
          (plist [:a :b] [1 2]))))
 
-(deftest testing-nil
+(deftest an-empty-array
   (is (= []
          (cp [1 2] []))))
 
