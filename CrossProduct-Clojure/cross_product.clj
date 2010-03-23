@@ -2,9 +2,9 @@
 
 (defn zip-in-plist [names values]
   "Produces a plist in the Emacs sense."
-  (let [name-value-map (sort (zipmap names
-                                     values))]
-    (reduce concat name-value-map)))
+  (let [name-value-map (zipmap names
+                               values)]
+    (reduce concat (sort name-value-map))))
 
 (defmacro cross-product [& arrays]
   "Just wraps a call to Clojure's for macro."
