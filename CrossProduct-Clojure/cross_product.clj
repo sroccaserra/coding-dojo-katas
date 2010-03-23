@@ -8,8 +8,7 @@
 
 (defmacro cross-product [& arrays]
   "Just wraps a call to Clojure's for macro."
-  (let [nb-arrays (count arrays)
-        names (for [_ (range nb-arrays)]
-                (gensym "name"))]
-    `(for [~@(zip-in-plist names arrays)] [~@names])))
+  (let [symbols (for [_ arrays]
+                  (gensym))]
+    `(for [~@(zip-in-plist symbols arrays)] [~@symbols])))
 
