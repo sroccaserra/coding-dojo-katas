@@ -2,8 +2,7 @@
 
 (defn zip-in-plist [keys values]
   "Zips keys and values in a plist, in the Emacs sense (see tests)."
-  (let [zipped-map (zipmap keys
-                          values)]
+  (let [zipped-map (zipmap keys values)]
     (apply concat (sort zipped-map))))
 
 (defmacro cross-product [& arrays]
